@@ -1,0 +1,27 @@
+<%= form_for @Snow do |f| %>
+    <div class="field">
+        <%= f.label :スキー場 %>
+        <%= f.text_field :spot, :size => 30 %>
+    </div> 
+
+    <div class="field">
+        <%= f.label :住所 %>
+        <%= f.text_field :address, :size => 30 %>
+    </div>
+
+    <div class="field">
+        <%= f.label :画像 %>
+        <%= f.text_field :image, :size => 30 %>
+    </div>
+
+    <div class="field">
+        <%= f.label :ホームページ %>
+        <%= f.text_field :hp, :size => 30 %>
+    </div>
+
+    <div class="field">
+        <%= f.label :電話番号%>
+        <%= f.text_field :telephone, :size => 30 %>
+    </div>
+    <%= f.submit "編集する" %>
+<% end %>
