@@ -1,0 +1,15 @@
+<h1>Snow</h1>
+<h3>一覧ページ</h3>
+<%= link_to "新規投稿へ", new_snow_path %>
+<div class="snows-container">
+  <% @snows.each do |t| %>
+    <div class="snow">
+      <%= t.spot %>
+      <%= t.address %>
+      <%= t.hp %>
+      <%= t.telephone %>
+      <%= t.created_at %>
+      <%= t.updated_at %>
+    </div>
+  <% end %>
+</div>
