@@ -1,12 +1,21 @@
 class SnowsController < ApplicationController
 
+    before_action :authenticate_user!, only: [:new, :create]
 
     def new
         @Snow = Snow.new
     end
     
+<<<<<<< HEAD
     def create
     snow = Snow.new(snow_params)
+=======
+      def create
+        snow = Snow.new(snow_params)
+
+        snow.user_id = current_user.id
+
+>>>>>>> origin/master
         if snow.save!
             redirect_to :action => "index"
         else
