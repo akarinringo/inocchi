@@ -1,0 +1,12 @@
+<h1>Snow</h1>
+<h3>詳細</h3>
+<div class="snow">
+  <p><%= @Snow.spot %></p>
+  <p><%= @Snow.address %></p>
+  <p><%= @Snow.hp %></p>
+  <p><%= @Snow.telephone %></p>
+  <p><%= @Snow.created_at %></p>
+</div>
+
+<%= link_to "一覧に戻る", snows_path %>
+<%= link_to "編集する", edit_snow_path(@Snow.id) %>
