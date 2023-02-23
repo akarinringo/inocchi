@@ -1,0 +1,2 @@
+class SnowsController < ApplicationController
+end
