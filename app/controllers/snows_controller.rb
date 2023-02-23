@@ -1,5 +1,6 @@
 class SnowsController < ApplicationController
 
+    before_action :authenticate_user!, only: [:new, :create]
 
     def new
         @Snow = Snow.new
@@ -7,6 +8,9 @@ class SnowsController < ApplicationController
     
       def create
         snow = Snow.new(snow_params)
+
+        snow.user_id = current_user.id
+
         if snow.save!
           redirect_to :action => "index"
         else
