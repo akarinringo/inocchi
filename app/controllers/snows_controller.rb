@@ -1,4 +1,5 @@
 class SnowsController < ApplicationController
+<<<<<<< HEAD
 
     def new
         @snow = Snow.new
@@ -18,4 +19,9 @@ class SnowsController < ApplicationController
         params.require(:snow).permit(:spot, :address, :image, :hp, :telephone)
       end
 
+=======
+    def index
+        @snows = Snow.all
+    end
+>>>>>>> origin/master
 end
