@@ -1,0 +1,2 @@
+class WhitesController < ApplicationController
+end
