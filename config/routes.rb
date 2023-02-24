@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :snows
   root 'snows#index'
-
+  
 end
 
