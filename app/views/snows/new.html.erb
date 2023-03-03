@@ -28,6 +28,26 @@
     <%= f.text_field :telephone, :size => 30 %>
   </div>
 
+
+  <h5>総合評価</h5>
+  <div class="post_form">
+   <%= f.radio_button :overall, 5 ,id: 'star1'%>
+   <label for="star1"><span class="text">最高</span>★</label>
+
+   <%= f.radio_button :overall, 4 ,id: 'star2'%>
+   <label for="star2"><span class="text">良い</span>★</label>
+
+   <%= f.radio_button :overall, 3 ,id: 'star3'%>
+   <label for="star3"><span class="text">普通</span>★</label>
+
+   <%= f.radio_button :overall, 2 ,id: 'star4'%>
+   <label for="star4"><span class="text">悪い</span>★</label>
+
+   <%= f.radio_button :overall, 1 ,id: 'star5'%>
+   <label for="star5"><span class="text">最悪</span>★</label>
+</div>
+
+
   <div class="field">
     <%= f.label :lat,"緯度" %>
     <%= f.text_field :lat,:value =>"緯度", id: :lat %>
@@ -37,6 +57,7 @@
     <%= f.label :lng,"経度" %>
     <%= f.text_field :lng,:value =>"経度", id: :lng %>
   </div>
+
 
   <%= f.submit "投稿する" %>
 <% end %>

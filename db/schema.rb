@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_23_213219) do
+ActiveRecord::Schema.define(version: 2023_02_24_035627) do
+
+  create_table "lectures", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.integer "overall"
+    t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "snows", force: :cascade do |t|
     t.string "spot"
@@ -22,6 +31,7 @@ ActiveRecord::Schema.define(version: 2023_02_23_213219) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "lat"
     t.float "lng"
+    t.integer "overall"
     t.integer "user_id"
   end
 
