@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2023_02_24_035627) do
     t.string "telephone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "lat"
+    t.float "lng"
     t.integer "overall"
     t.integer "user_id"
   end
