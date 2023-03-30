@@ -1,4 +1,5 @@
 module SnowsHelper
+
   def  getPercent(number) 
     if number.present?
       calPercent = number/5.to_f * 100
@@ -11,6 +12,7 @@ module SnowsHelper
       return 0
     end
   end
+
 end
 
 

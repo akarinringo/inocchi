@@ -1,0 +1,6 @@
+<h1>群馬のスキー場やで</h1>
+<% @gunnmas.each do |t| %>
+    <% if t.category == "gunnma" %>  #ここがポイント！ categoryカラムにcatと格納されているものだけを表示している！
+    <p>内容:<%= t.spot %></p>
+    <% end %>
+  <% end %>

@@ -28,6 +28,7 @@
     <%= f.text_field :telephone, :size => 30 %>
   </div>
 
+  <%= f.select :category, [["新潟", "niigata"], ["長野", "nagano"], ["群馬", "gunnma"]], include_blank: "どの投稿？" %>
 
   <h5>総合評価</h5>
   <div class="post_form">
@@ -48,6 +49,7 @@
 </div>
 
 
+
   <div class="field">
     <%= f.label :lat,"緯度" %>
     <%= f.text_field :lat,:value =>"緯度", id: :lat %>
@@ -58,11 +60,12 @@
     <%= f.text_field :lng,:value =>"経度", id: :lng %>
   </div>
 
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> origin/master
+ 
+
+
+
+
   <%= f.submit "投稿する" %>
 <% end %>
 

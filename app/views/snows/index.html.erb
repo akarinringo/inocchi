@@ -5,6 +5,9 @@
   <%= link_to "マイページへ", user_path(current_user.id) %>
 <% end %>
 
+<%= link_to "新潟", snows_niigata_path %>
+<%= link_to "長野", snows_nagano_path %>
+<%= link_to "群馬", snows_gunnma_path %>
 
 
 <div class="snows-container">
@@ -17,6 +20,7 @@
       <%= t.created_at %>
       <%= t.updated_at %>
       <div>
+      
 <h2>総合評価：
 <span class="star-rating">
    <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
@@ -54,6 +58,9 @@
             ]
            }
           ];
+
+          
+
 
       let map = new google.maps.Map(document.getElementById('map'), {
           zoom: 5.5,
