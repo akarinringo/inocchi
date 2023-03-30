@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
   resources :snows
   root 'snows#index'
-<<<<<<< HEAD
+
   resources :users, :only => [:index, :show]
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show]
  
 
-=======
+
   
->>>>>>> origin/master
+  
 end
 
