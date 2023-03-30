@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_03_192358) do
+
+ActiveRecord::Schema.define(version: 2023_03_03_193911) do
+
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -48,11 +50,12 @@ ActiveRecord::Schema.define(version: 2023_03_03_192358) do
   create_table "snows", force: :cascade do |t|
     t.string "spot"
     t.string "address"
-    t.string "image"
     t.string "hp"
     t.string "telephone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.integer "overall"
     t.float "lat"
     t.float "lng"
     t.integer "user_id"

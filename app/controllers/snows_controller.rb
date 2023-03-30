@@ -11,14 +11,13 @@ class SnowsController < ApplicationController
     def create
 
 
-    snow = Snow.new(snow_params)
+    
 
+        snow = Snow.new(snow_params)
         snow.user_id = current_user.id
 
         if snow.save
           redirect_to :action => "index"
-
-
         else
           redirect_to :action => "new"
         end
@@ -70,11 +69,9 @@ class SnowsController < ApplicationController
    
 
 
+    private
 
-
-      private
       def snow_params
-
 
 
         params.require(:snow).permit(:spot, :address, :image, :hp, :telephone, :lat, :lng, :overall, :category)
