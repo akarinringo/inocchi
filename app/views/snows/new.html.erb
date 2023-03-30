@@ -13,10 +13,12 @@
   <%= f.text_field :address, :size => 30 %>
 </div>
   
-<div class="field">
-    <%= f.label :画像 %>
-    <%= f.text_field :image, :size => 30 %>
+  <div class="form-group">
+      <label class="text-secondary">画像</label><br>
+      <%= f.file_field :image %>
   </div>
+
+  <div id="new-image"></div>
 
   <div class="field">
     <%= f.label :ホームページ %>
@@ -58,11 +60,6 @@
     <%= f.text_field :lng,:value =>"経度", id: :lng %>
   </div>
 
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> origin/master
   <%= f.submit "投稿する" %>
 <% end %>
 

@@ -12,6 +12,7 @@
     <div class="snow">
       <%= t.spot %>
       <%= t.address %>
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
       <%= t.hp %>
       <%= t.telephone %>
       <%= t.created_at %>
