@@ -1,0 +1,8 @@
+<h1>新潟のスキー場やで</h1>
+<% @niigatas.each do |t| %>
+    <% if t.category == "niigata" %>  #ここがポイント！ categoryカラムにdogと格納されているものだけを表示している！
+    <p>内容:<%= t.spot %></p>
+    <% end %>
+  <% end %>
+
+  <%= link_to "一覧に戻る", snows_path %>
