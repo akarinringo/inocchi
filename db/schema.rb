@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2023_03_03_193911) do
-
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -55,12 +53,11 @@ ActiveRecord::Schema.define(version: 2023_03_03_193911) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.string "category"
     t.integer "overall"
     t.float "lat"
     t.float "lng"
     t.integer "user_id"
-    t.integer "overall"
-    t.string "category"
   end
 
   create_table "users", force: :cascade do |t|
