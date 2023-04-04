@@ -6,6 +6,7 @@
 <div class="snow">
   <p><%= @Snow.spot %></p>
   <p><%= @Snow.address %></p>
+  <p><%= image_tag @Snow.image_url, size: "250x200" if @Snow.image? %></p>
   <p><%= @Snow.hp %></p>
   <p><%= @Snow.telephone %></p>
   <p><%= @Snow.created_at %></p>

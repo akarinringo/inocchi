@@ -13,13 +13,13 @@
 <div class="snows-container">
   <% @snows.each do |t| %>
     <div class="snow">
-      <%= t.spot %>
-      <%= t.address %>
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
-      <%= t.hp %>
-      <%= t.telephone %>
-      <%= t.created_at %>
-      <%= t.updated_at %>
+      <p><%= t.spot %></p>
+      <p><%= t.address %></p>
+      <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>
+      <p><%= t.hp %></p>
+      <p><%= t.telephone %></p>
+      <p><%= t.created_at %></p>
+      <p><%= t.updated_at %></p>
       <div>
       
 <h2>総合評価：

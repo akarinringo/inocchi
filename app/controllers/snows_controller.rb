@@ -52,10 +52,10 @@ class SnowsController < ApplicationController
     def update
         snow = Snow.find(params[:id])
        
-        if snow.save
-            redirect_to :action => "index"
-          else
-            redirect_to :action => "new"
+        if snow.update(snow_params)
+          redirect_to :action => "show", :id => snow.id
+        else
+          redirect_to :action => "new"
         end
     end
 
