@@ -1,140 +1,157 @@
-<h1>snow place</h1>
-<h3>新規投稿ページ</h3>
-<%= form_for @Snow do |f| %>
+<div class="snow-new">
+  <div class="snow-new-backimage">
+    <div class="snow-new-flame">
+    <%= form_for @Snow do |f| %>
+      <div class="snow-new-image-flex">
+        <div class="snow-new-image">
+          <label class="snow-new-text-image">画像</label>
+          <%= f.file_field :image %>
+        </div>
+        <div id="new-image"></div>
+      </div>
+        
+      <div class="snow-new-spot">
+      <label class="snow-new-text-spot">スキー場</label>
+            <%= f.text_field :spot, :size => 30 %>
+      </div>
 
-# データ型がstringで自由記述の入力フォーム
-  <div class="field">
-    <%= f.label :スキー場 %>
-    <%= f.text_field :spot, :size => 30 %>
+      <p class="snow-new-text-star">総合評価</p>
+        <div class="snow-new-star">
+        <%= f.radio_button :overall, 5 ,id: 'star1'%>
+        <label for="star1"><span class="text">最高</span>★</label>
+
+        <%= f.radio_button :overall, 4 ,id: 'star2'%>
+        <label for="star2"><span class="text">良い</span>★</label>
+
+        <%= f.radio_button :overall, 3 ,id: 'star3'%>
+        <label for="star3"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :overall, 2 ,id: 'star4'%>
+        <label for="star4"><span class="text">悪い</span>★</label>
+
+        <%= f.radio_button :overall, 1 ,id: 'star5'%>
+        <label for="star5"><span class="text">最悪</span>★</label>
+      </div>
+
+      <div class="snow-new-hp">
+      <label class="snow-new-text-hp">HPリンク</label>
+        <%= f.text_field :hp, :size => 30 %>
+      </div>
+
+      <div class="snow-new-telephone">
+      <label class="snow-new-text-telephone">電話番号</label>
+        <%= f.text_field :telephone, :size => 30 %>
+      </div>
+
+      <div class="snow-new-address">
+      <label class="snow-new-text-address">住所</label>
+        <%= f.text_field :address, :size => 30 %>
+      </div>
+        
+    <div class="snow-new-ken">
+      <p class="snow-new-text-ken">県名</p> 
+        <div class="snow-new-ken-select">
+        <%= f.select :category, [["新潟", "niigata"], ["長野", "nagano"], ["群馬", "gunnma"]], include_blank: "どの投稿？" %>
+        </div>
+    </div>
+      
+
+
+
+      <div class="snow-new-ido">
+      <label class="snow-new-text-ido">緯度</label>
+        <%= f.text_field :lat,:value =>"緯度", id: :lat %>
+      </div>
+        
+      <div class="snow-new-keido">
+      <label class="snow-new-text-keido">緯度</label>
+        <%= f.text_field :lng,:value =>"経度", id: :lng %>
+      </div>
+    </div>
+
+
+    <div class="snow-new-submit">
+      <%= f.submit "POST" %>
+    </div>
+    <% end %>
   </div>
 
-  <div class="field">
-  <%= f.label :住所 %>
-  <%= f.text_field :address, :size => 30 %>
-</div>
-  
-  <div class="form-group">
-      <label class="text-secondary">画像</label><br>
-      <%= f.file_field :image %>
+  <div class="snow-new-googlemap">
+    <h2>Map</h2>
+  <div class="snow-new-googlemap-search">
+    <input id="address" type="textbox" value="GeekSalon">
+    <input type="button" value="検索" onclick="codeAddress()">
+  </div>
+    <p class="snow-new-googlemap-p">マーカーをドラック＆ドロップで位置の調整ができます。<p>
+    <div id='map'></div>
   </div>
 
-  <div id="new-image"></div>
-
-  <div class="field">
-    <%= f.label :ホームページ %>
-    <%= f.text_field :hp, :size => 30 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :電話番号%>
-    <%= f.text_field :telephone, :size => 30 %>
-  </div>
-
-  <%= f.select :category, [["新潟", "niigata"], ["長野", "nagano"], ["群馬", "gunnma"]], include_blank: "どの投稿？" %>
-
-  <h5>総合評価</h5>
-  <div class="post_form">
-   <%= f.radio_button :overall, 5 ,id: 'star1'%>
-   <label for="star1"><span class="text">最高</span>★</label>
-
-   <%= f.radio_button :overall, 4 ,id: 'star2'%>
-   <label for="star2"><span class="text">良い</span>★</label>
-
-   <%= f.radio_button :overall, 3 ,id: 'star3'%>
-   <label for="star3"><span class="text">普通</span>★</label>
-
-   <%= f.radio_button :overall, 2 ,id: 'star4'%>
-   <label for="star4"><span class="text">悪い</span>★</label>
-
-   <%= f.radio_button :overall, 1 ,id: 'star5'%>
-   <label for="star5"><span class="text">最悪</span>★</label>
-</div>
-
-
-
-  <div class="field">
-    <%= f.label :lat,"緯度" %>
-    <%= f.text_field :lat,:value =>"緯度", id: :lat %>
-  </div>
-    
-  <div class="field">
-    <%= f.label :lng,"経度" %>
-    <%= f.text_field :lng,:value =>"経度", id: :lng %>
-  </div>
-
-
-  <%= f.submit "投稿する" %>
-<% end %>
-
-<h2>Map</h2>
-
-<input id="address" type="textbox" value="GeekSalon">
-<input type="button" value="検索" onclick="codeAddress()">
-<p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
-<div id='map'></div>
-
-<style>
-#map {
-  height: 600px;
-  width: 600px;
-}
-</style>
-
-<script>
-//初期マップの設定
-let map
-let marker
-function initMap(){
-  geocoder = new google.maps.Geocoder()
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center:  {lat: 35.6803997, lng:139.7690174},  //東京
-    zoom: 15,
-    
-  });
-}
-
-//検索後のマップ作成
-let geocoder
-let aft
-function codeAddress(){
-  let inputAddress = document.getElementById('address').value;
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-        //マーカーが複数できないようにする
-        if (aft == true){
-            marker.setMap(null);
-        }
-
-        //新しくマーカーを作成する
-        map.setCenter(results[0].geometry.location);
-            marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location,
-            draggable: true	// ドラッグ可能にする
-        });
-
-        //二度目以降か判断
-        aft = true
-
-        //検索した時に緯度経度を入力する
-        document.getElementById('lat').value = results[0].geometry.location.lat();
-        document.getElementById('lng').value = results[0].geometry.location.lng();
-
-        // マーカーのドロップ（ドラッグ終了）時のイベント
-        google.maps.event.addListener( marker, 'dragend', function(ev){
-            // イベントの引数evの、プロパティ.latLngが緯度経度
-            document.getElementById('lat').value = ev.latLng.lat();
-            document.getElementById('lng').value = ev.latLng.lng();
-        });
-    } else {
-      alert('該当する結果がありませんでした：' + status);
+    <style>
+    #map {
+      margin: 0 auto;
+      height: 600px;
+      width: 800px;
     }
-  });   
-}
+    </style>
 
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeGD507tfHw3zLYsclweUqIY9awizjsvc&callback=initMap" async defer></script>
+    <script>
+    //初期マップの設定
+    let map
+    let marker
+    function initMap(){
+      geocoder = new google.maps.Geocoder()
 
-<%= link_to "一覧に戻る", snows_path %>
+      map = new google.maps.Map(document.getElementById('map'), {
+        center:  {lat: 35.6803997, lng:139.7690174},  //東京
+        zoom: 15,
+        
+      });
+    }
 
+    //検索後のマップ作成
+    let geocoder
+    let aft
+    function codeAddress(){
+      let inputAddress = document.getElementById('address').value;
+      geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+        if (status == 'OK') {
+            //マーカーが複数できないようにする
+            if (aft == true){
+                marker.setMap(null);
+            }
+
+            //新しくマーカーを作成する
+            map.setCenter(results[0].geometry.location);
+                marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location,
+                draggable: true	// ドラッグ可能にする
+            });
+
+            //二度目以降か判断
+            aft = true
+
+            //検索した時に緯度経度を入力する
+            document.getElementById('lat').value = results[0].geometry.location.lat();
+            document.getElementById('lng').value = results[0].geometry.location.lng();
+
+            // マーカーのドロップ（ドラッグ終了）時のイベント
+            google.maps.event.addListener( marker, 'dragend', function(ev){
+                // イベントの引数evの、プロパティ.latLngが緯度経度
+                document.getElementById('lat').value = ev.latLng.lat();
+                document.getElementById('lng').value = ev.latLng.lng();
+            });
+        } else {
+          alert('該当する結果がありませんでした：' + status);
+        }
+      });   
+    }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeGD507tfHw3zLYsclweUqIY9awizjsvc&callback=initMap" async defer></script>
+
+<div class="snow-new-link">
+  <%= link_to "HOME", snows_path %>
+</div>
+
+</div>
