@@ -3,8 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+* {
+  padding: 0;
+  margin: 0;
+}
 
-.lecture_form{
+.snow-new-star{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -18,22 +22,22 @@
 
 /*　以下新規投稿ページの星用のCSS　*/
 
-  .post_form{
+  .snow-new-star{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
   }
-  .post_form input[type='radio']{
+  .snow-new-star input[type='radio']{
     display: none;
   }
-  .post_form label{
+  .snow-new-star label{
     position: relative;
     padding: 10px 10px 0;
     color: gray;
     cursor: pointer;
     font-size: 30px; /*星の大きさを変更するときはここ*/
   }
-  .post_form label .text{
+  .snow-new-star label .text{
     position: absolute;
     left: 0;
     top: 0;
@@ -42,9 +46,9 @@
     font-size: 9px; /*星の上の説明書きの大きさを変更するときはここ*/
     color: gray;
   }
-  .post_form label:hover,
-  .post_form label:hover ~ label,
-  .post_form input[type='radio']:checked ~ label{
+  .snow-new-star label:hover,
+  .snow-new-star label:hover ~ label,
+  .snow-new-star input[type='radio']:checked ~ label{
     color: #ffcc00;
   }
 
@@ -75,6 +79,247 @@
 
 
   .new-img{
-    width: 400px;
+    width: 100px;
     object-fit: cover;
+  }
+
+  .snow-new{
+    background-color: #ECEEFF;
+    height: 100%;
+  }
+
+  .snow-new-image-flex{
+    display: flex;
+  }
+  .snow-new-backimage{
+    background-image: url(new.jpg);
+    height: 700px;
+    padding: 80px;
+  }
+  .snow-new-flame{
+    background-color: #D9D9D9;
+    margin: 0 auto;
+    padding: 30px;
+    border: solid #D9D9D9;
+    border-radius: 5px;
+    width: 60%;
+  }
+
+  .snow-new-googlemap{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .snow-new-googlemap h2{
+    text-align: center;
+
+  }
+
+  .snow-new-googlemap-p{
+    text-align: center;
+  }
+
+  .snow-new-text-image{
+    margin: 30px;
+  }
+
+  .snow-new-image input[type="file"]{
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+  }
+
+  .snow-new-text-spot{
+    margin: 13px;
+  }
+
+  .snow-new-spot input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-spot input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-star{
+    margin: 13px;
+  }
+
+  .snow-new-text-hp{
+    margin: 13px;
+  }
+  .snow-new-hp input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-hp input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-telephone{
+    margin: 15px;
+  }
+
+  .snow-new-telephone input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-telephone input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-address{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-new-address input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-address input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-ken{
+    margin: 25px;
+    margin-right: 37px;
+    margin-bottom: 10px;
+  }
+
+  .snow-new-ken-select{
+    width: 200px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    margin-left: 110px;
+  }
+
+  .snow-new-text-ido{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-new-ido input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-ido input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-keido{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-new-keido input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-keido input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-submit{
+    margin: 10px;
+  }
+
+  .snow-new-submit input[type="submit"]{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+  }
+
+  .snow-new-submit input[type="submit"]:hover {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
+
+  .snow-new-googlemap-search{
+    text-align: center ;
+    margin: 20px;
+  }
+
+  .snow-new-googlemap-search input[type="textbox"]{
+    width: 200px;
+    height: 30px;
+    margin: 0 ;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-googlemap-search input[type="button"]{
+    width: 50px;
+    height: 30px;
+    margin: 0;
+    border: solid 1px #D9D9D9;
+    background-color: #D9D9D9;
+  }
+
+
+  .snow-new-link a{
+    text-decoration: none;
+    color: #3F3E40;
+  }
+  
+  .snow-new-link{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+  }
+
+  .snow-new-link:hover{
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
   }
