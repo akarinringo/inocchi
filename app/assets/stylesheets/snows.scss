@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+* {
+  padding: 0;
+  margin: 0;
+}
 
 
 /*スライドショー*/
@@ -61,7 +65,8 @@
 
 
 
-.lecture_form{
+
+.snow-new-star{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -75,22 +80,22 @@
 
 /*　以下新規投稿ページの星用のCSS　*/
 
-  .post_form{
+  .snow-new-star{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
   }
-  .post_form input[type='radio']{
+  .snow-new-star input[type='radio']{
     display: none;
   }
-  .post_form label{
+  .snow-new-star label{
     position: relative;
     padding: 10px 10px 0;
     color: gray;
     cursor: pointer;
     font-size: 30px; /*星の大きさを変更するときはここ*/
   }
-  .post_form label .text{
+  .snow-new-star label .text{
     position: absolute;
     left: 0;
     top: 0;
@@ -99,9 +104,40 @@
     font-size: 9px; /*星の上の説明書きの大きさを変更するときはここ*/
     color: gray;
   }
-  .post_form label:hover,
-  .post_form label:hover ~ label,
-  .post_form input[type='radio']:checked ~ label{
+  .snow-new-star label:hover,
+  .snow-new-star label:hover ~ label,
+  .snow-new-star input[type='radio']:checked ~ label{
+    color: #ffcc00;
+  }
+
+  /*　以下編集ページの星用のCSS　*/
+  .snow-edit-star{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .snow-edit-star input[type='radio']{
+    display: none;
+  }
+  .snow-edit-star label{
+    position: relative;
+    padding: 10px 10px 0;
+    color: gray;
+    cursor: pointer;
+    font-size: 30px; /*星の大きさを変更するときはここ*/
+  }
+  .snow-edit-star label .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 9px; /*星の上の説明書きの大きさを変更するときはここ*/
+    color: gray;
+  }
+  .snow-edit-star label:hover,
+  .snow-edit-star label:hover ~ label,
+  .snow-edit-star input[type='radio']:checked ~ label{
     color: #ffcc00;
   }
 
@@ -130,10 +166,583 @@
 
   }
 
+  /*　以下詳細ページの星用のCSS　*/
 
+  .snow-show-star {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 1em;
+    font-size: 25px;
+    margin: 10px 70px;
+  }
+  .star-rating-front {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #ffcc33;
+  }
+  .star-rating-back {
+    display: inline-block;
+    color: #ccc;
+
+
+  }
+
+/*　以下新規投稿ページのCSS　*/
   .new-img{
-    width: 400px;
+    width: 100px;
     object-fit: cover;
   }
 
+  .snow-new{
+    background-color: #ECEEFF;
+    height: 100%;
+  }
+
+  .snow-new-image-flex{
+    display: flex;
+  }
+  .snow-new-backimage{
+    background-image: url(new.jpg);
+    height: 700px;
+    padding: 80px;
+  }
+  .snow-new-flame{
+    background-color: #D9D9D9;
+    margin: 0 auto;
+    padding: 30px;
+    border: solid #D9D9D9;
+    border-radius: 5px;
+    width: 60%;
+  }
+
+  .snow-new-googlemap{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .snow-new-googlemap h2{
+    text-align: center;
+
+  }
+
+  .snow-new-googlemap-p{
+    text-align: center;
+  }
+
+  .snow-new-text-image{
+    margin: 30px;
+  }
+
+  .snow-new-image input[type="file"]{
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+  }
+
+  .snow-new-text-spot{
+    margin: 13px;
+  }
+
+  .snow-new-spot input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-spot input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-star{
+    margin: 13px;
+  }
+
+  .snow-new-text-hp{
+    margin: 13px;
+  }
+  .snow-new-hp input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-hp input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-telephone{
+    margin: 15px;
+  }
+
+  .snow-new-telephone input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-telephone input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-address{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-new-address input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-address input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-ken{
+    margin: 25px;
+    margin-right: 37px;
+    margin-bottom: 10px;
+  }
+
+  .snow-new-ken-select{
+    width: 200px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    margin-left: 110px;
+  }
+
+  .snow-new-text-ido{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-new-ido input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-ido input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-text-keido{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-new-keido input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-keido input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-submit{
+    margin: 10px;
+  }
+
+  .snow-new-submit input[type="submit"]{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
+  }
+
+  .snow-new-submit input[type="submit"]:hover {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
+
+  .snow-new-googlemap-search{
+    text-align: center ;
+    margin: 20px;
+  }
+
+  .snow-new-googlemap-search input[type="textbox"]{
+    width: 200px;
+    height: 30px;
+    margin: 0 ;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-new-googlemap-search input[type="button"]{
+    width: 50px;
+    height: 30px;
+    margin: 0;
+    border: solid 1px #D9D9D9;
+    background-color: #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    font-family: 'Silkscreen', cursive;
+  }
+  .snow-new-googlemap-search input[type="button"]:hover {
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
+
+  .snow-new-link a{
+    text-decoration: none;
+    color: #3F3E40;
+  }
   
+  .snow-new-link{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
+  }
+
+  .snow-new-link:hover{
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
+
+
+  /*　以下編集ページのCSS　*/
+  .edit-img{
+    width: 100px;
+    object-fit: cover;
+  }
+
+  .snow-edit{
+    background-color: #ECEEFF;
+    height: 100%;
+  }
+
+  .snow-edit-image-flex{
+    display: flex;
+  }
+  .snow-edit-backimage{
+    background-image: url(new.jpg);
+    height: 500px;
+    padding: 80px;
+  }
+  .snow-edit-flame{
+    background-color: #D9D9D9;
+    margin: 0 auto;
+    padding: 30px;
+    border: solid #D9D9D9;
+    border-radius: 5px;
+    width: 60%;
+  }
+
+  .snow-edit-text-image{
+    margin: 30px;
+  }
+
+  .snow-edit-image input[type="file"]{
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+  }
+
+  .snow-edit-text-spot{
+    margin: 13px;
+  }
+
+  .snow-edit-spot input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-spot input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-star{
+    margin: 13px;
+  }
+
+  .snow-edit-text-hp{
+    margin: 13px;
+  }
+  .snow-edit-hp input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-hp input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-telephone{
+    margin: 15px;
+  }
+
+  .snow-edit-telephone input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-telephone input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-address{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-edit-address input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-address input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-ken{
+    margin: 25px;
+    margin-right: 37px;
+    margin-bottom: 10px;
+  }
+
+  .snow-edit-ken-select{
+    width: 200px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    margin-left: 110px;
+  }
+
+  .snow-edit-submit{
+    margin: 10px;
+  }
+
+  .snow-edit-submit input[type="submit"]{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
+  }
+
+  .snow-edit-submit input[type="submit"]:hover {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
+
+  .snow-edit-link a{
+    text-decoration: none;
+    color: #3F3E40;
+  }
+  
+  .snow-edit-link{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
+  }
+
+  .snow-edit-link:hover{
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
+
+    /*　以下詳細ページのCSS　*/
+
+.snow-show{
+  width: 40%;
+  margin: 0 auto;
+  background-color: #D9D9D9;
+  padding: 10px;
+  box-shadow: 5px 5px 4px #6f7070;
+}
+
+.snow-show-image{
+  text-align: center;
+  margin: 10px;
+  width: auto;
+  height: auto;
+}
+
+.snow-edit-textbox{
+  background-color: #ffffff;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.snow-show-spot{
+  text-align: center;
+}
+
+.snow-show h4{
+  text-align: center;
+}
+
+.snow-show-hp{
+  text-align: center;
+}
+
+.snow-show-telephone{
+  text-align: center;
+}
+
+.snow-show-address{
+  text-align: center;
+}
+
+.snow-show-day{
+  text-align: center;
+}
+
+.snow-show-editlink a{
+  text-decoration: none;
+  color: #3F3E40;
+}
+
+.snow-show-editlink{
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  position: relative;
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #3F3E40;
+  border: 2px solid #ffffff;
+  box-shadow: 5px 5px #6f7070;
+  transition: 0.3s ease-in-out;
+  font-family: 'Silkscreen', cursive;
+}
+
+.snow-show-editlink:hover{
+  box-shadow: none;
+  transform: translate(5px, 5px);
+  color: #3F3E40;
+}
+
+.snow-show-background{
+  background-image: url(new.jpg);
+  height: 600px;
+  padding: 80px;
+}
+
+.snow-show-indexlink{
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  position: relative;
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  color: #3F3E40;
+  border: 2px solid #D9D9D9;
+  box-shadow: 5px 5px #6f7070;
+  transition: 0.3s ease-in-out;
+  font-family: 'Silkscreen', cursive;
+}
+
+.snow-show-indexlink a{
+  text-decoration: none;
+  color: #3F3E40;
+}
+
+.snow-show-indexlink:hover{
+  box-shadow: none;
+  transform: translate(5px, 5px);
+  color: #3F3E40;
+}

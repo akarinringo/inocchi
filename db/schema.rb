@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(version: 2023_03_03_193911) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.string "category"
     t.integer "overall"
     t.float "lat"
     t.float "lng"
     t.integer "user_id"
+    t.string "category"
   end
 
   create_table "users", force: :cascade do |t|
