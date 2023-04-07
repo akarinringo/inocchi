@@ -366,4 +366,182 @@
 
 
   /*　以下編集ページのCSS　*/
+  .edit-img{
+    width: 100px;
+    object-fit: cover;
+  }
 
+  .snow-edit{
+    background-color: #ECEEFF;
+    height: 100%;
+  }
+
+  .snow-edit-image-flex{
+    display: flex;
+  }
+  .snow-edit-backimage{
+    background-image: url(new.jpg);
+    height: 500px;
+    padding: 80px;
+  }
+  .snow-edit-flame{
+    background-color: #D9D9D9;
+    margin: 0 auto;
+    padding: 30px;
+    border: solid #D9D9D9;
+    border-radius: 5px;
+    width: 60%;
+  }
+
+  .snow-edit-text-image{
+    margin: 30px;
+  }
+
+  .snow-edit-image input[type="file"]{
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+  }
+
+  .snow-edit-text-spot{
+    margin: 13px;
+  }
+
+  .snow-edit-spot input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-spot input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-star{
+    margin: 13px;
+  }
+
+  .snow-edit-text-hp{
+    margin: 13px;
+  }
+  .snow-edit-hp input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-hp input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-telephone{
+    margin: 15px;
+  }
+
+  .snow-edit-telephone input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-telephone input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-address{
+    margin: 25px;
+    margin-right: 37px;
+  }
+
+  .snow-edit-address input[type="text"]{
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-address input[type="text"]:focus{
+    outline: 0;
+    border: solid 1px #ffffff;
+  }
+
+  .snow-edit-text-ken{
+    margin: 25px;
+    margin-right: 37px;
+    margin-bottom: 10px;
+  }
+
+  .snow-edit-ken-select{
+    width: 200px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    margin-left: 110px;
+  }
+
+  .snow-edit-submit{
+    margin: 10px;
+  }
+
+  .snow-edit-submit input[type="submit"]{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
+  }
+
+  .snow-edit-submit input[type="submit"]:hover {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
+
+  .snow-edit-link a{
+    text-decoration: none;
+    color: #3F3E40;
+  }
+  
+  .snow-edit-link{
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: #3F3E40;
+    border: 2px solid #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
+  }
+
+  .snow-edit-link:hover{
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
