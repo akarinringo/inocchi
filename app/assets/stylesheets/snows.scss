@@ -52,6 +52,37 @@
     color: #ffcc00;
   }
 
+  /*　以下編集ページの星用のCSS　*/
+  .snow-edit-star{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .snow-edit-star input[type='radio']{
+    display: none;
+  }
+  .snow-edit-star label{
+    position: relative;
+    padding: 10px 10px 0;
+    color: gray;
+    cursor: pointer;
+    font-size: 30px; /*星の大きさを変更するときはここ*/
+  }
+  .snow-edit-star label .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 9px; /*星の上の説明書きの大きさを変更するときはここ*/
+    color: gray;
+  }
+  .snow-edit-star label:hover,
+  .snow-edit-star label:hover ~ label,
+  .snow-edit-star input[type='radio']:checked ~ label{
+    color: #ffcc00;
+  }
+
 
 /*　以下一覧ページの星用のCSS　*/
 
@@ -77,7 +108,7 @@
 
   }
 
-
+/*　以下新規投稿ページのCSS　*/
   .new-img{
     width: 100px;
     object-fit: cover;
@@ -265,6 +296,7 @@
     border: 2px solid #D9D9D9;
     box-shadow: 5px 5px #6f7070;
     transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
   }
 
   .snow-new-submit input[type="submit"]:hover {
@@ -291,8 +323,15 @@
     margin: 0;
     border: solid 1px #D9D9D9;
     background-color: #D9D9D9;
+    box-shadow: 5px 5px #6f7070;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    font-family: 'Silkscreen', cursive;
   }
-
+  .snow-new-googlemap-search input[type="button"]:hover {
+    transform: translate(5px, 5px);
+    color: #3F3E40;
+  }
 
   .snow-new-link a{
     text-decoration: none;
@@ -316,6 +355,7 @@
     border: 2px solid #D9D9D9;
     box-shadow: 5px 5px #6f7070;
     transition: 0.3s ease-in-out;
+    font-family: 'Silkscreen', cursive;
   }
 
   .snow-new-link:hover{
@@ -323,3 +363,5 @@
     transform: translate(5px, 5px);
     color: #3F3E40;
   }
+
+  /*　以下編集ページのCSS　*/
