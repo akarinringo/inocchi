@@ -15,7 +15,10 @@
  */
 
  
+ header{
+   font-family: 'Silkscreen', cursive;
+ }
+ 
  body{
     background-color: #ECEEFF;
-    font-family: 'Silkscreen', cursive;
  }

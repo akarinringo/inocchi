@@ -1,28 +1,63 @@
-<%= form_for @Snow do |f| %>
-    <div class="field">
-        <%= f.label :スキー場 %>
-        <%= f.text_field :spot, :size => 30 %>
-    </div> 
+<div class="snow-new">
+  <div class="snow-new-backimage">
+    <div class="snow-new-flame">
+        <%= form_for @Snow do |f| %>
+            <div class="snow-edit-image-flex">
+                <div class="snow-edit-image">
+                    <label class="snow-edit-text-image">画像</label>
+                    <%= f.file_field :image %>
+                </div>
+                <div id="edit-image"></div>
+            </div>
 
-    <div class="field">
-        <%= f.label :住所 %>
-        <%= f.text_field :address, :size => 30 %>
+            <div class="snow-edit-spot">
+                <%= f.label :スキー場 %>
+                <%= f.text_field :spot, :size => 30 %>
+            </div>
+
+            <p class="snow-edit-text-star">総合評価</p>
+                <div class="snow-edit-star">
+                    <%= f.radio_button :overall, 5 ,id: 'star1'%>
+                    <label for="star1"><span class="text">最高</span>★</label>
+
+                    <%= f.radio_button :overall, 4 ,id: 'star2'%>
+                    <label for="star2"><span class="text">良い</span>★</label>
+
+                    <%= f.radio_button :overall, 3 ,id: 'star3'%>
+                    <label for="star3"><span class="text">普通</span>★</label>
+
+                    <%= f.radio_button :overall, 2 ,id: 'star4'%>
+                    <label for="star4"><span class="text">悪い</span>★</label>
+
+                    <%= f.radio_button :overall, 1 ,id: 'star5'%>
+                    <label for="star5"><span class="text">最悪</span>★</label>
+                </div>
+            
+            <div class="snow-edit-hp">
+                <label class="snow-edit-text-hp">HPリンク</label>
+                <%= f.text_field :hp, :size => 30 %>
+            </div>
+
+            <div class="snow-edit-telephone">
+                <label class="snow-edit-text-telephone">電話番号</label>
+                <%= f.text_field :telephone, :size => 30 %>
+            </div>
+
+            <div class="snow-edit-address">
+                <label class="snow-edit-text-address">住所</label>
+                <%= f.text_field :address, :size => 30 %>
+            </div>
+
+            <div class="snow-edit-ken">
+                <p class="snow-edit-text-ken">県名</p> 
+                <div class="snow-edit-ken-select">
+                    <%= f.select :category, [["新潟", "niigata"], ["長野", "nagano"], ["群馬", "gunnma"]], include_blank: "どの投稿？" %>
+                </div>
+            </div>
     </div>
-
-    <div class="field">
-        <%= f.label :画像 %>
-        <%= f.text_field :image, :size => 30 %>
-    </div>
-
-    <div class="field">
-        <%= f.label :ホームページ %>
-        <%= f.text_field :hp, :size => 30 %>
-    </div>
-
-    <div class="field">
-        <%= f.label :電話番号%>
-        <%= f.text_field :telephone, :size => 30 %>
-    </div>
-
-    <%= f.submit "編集する" %>
-<% end %>
+  </div>
+            <div class="snow-edit-submit">
+                <%= f.submit "EDIT" %>
+            </div>
+        <% end %>
+</div>
