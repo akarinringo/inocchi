@@ -16,16 +16,43 @@
   <div class="header-list">
    <ul>
     <% if user_signed_in? %>
-     <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+     <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
     <% else %>
-     <li><%= link_to "新規登録", new_user_registration_path %></li>
-     <li><%= link_to "ログイン", new_user_session_path %></li>
+     <li><%= link_to "Sign up", new_user_registration_path %></li>
+     <li><%= link_to "Log in", new_user_session_path %></li>
     <% end %>
    </ul>
   </div>
+
+
+  <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <div class="menu-content">
+            <ul>
+                <li>
+                    <%= link_to "HOME", snows_path %>
+                </li>
+                <li>
+                <%= link_to "NEW POST", new_snow_path %>
+                </li>
+                <li>
+                <% if user_signed_in? %>
+  <%= link_to "MYPAGE", user_path(current_user.id) %>
+<% end %>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
  </header>
  <main>
   <%= yield %>
  </main>
+ <footer>
+ <p> ©inocchi&akarin.</p>
+</footer>
+
   </body>
 </html>

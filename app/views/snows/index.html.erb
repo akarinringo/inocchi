@@ -1,4 +1,12 @@
-<h1>Snow</h1>
+<div class="img-frame">
+<div class="img-01"></div>
+<div class="img-02"></div>
+<div class="img-03"></div>
+</div>
+
+    
+    
+    <h1>Snow</h1>
 <h3>一覧ページ</h3>
 <%= link_to "新規投稿へ", new_snow_path %>
 <% if user_signed_in? %>
@@ -12,23 +20,22 @@
 
 <div class="snows-container">
   <% @snows.each do |t| %>
+
+    <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>
+
     <div class="snow">
       <p><%= t.spot %></p>
-      <p><%= t.address %></p>
-      <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>
+      <h2>総合評価：
+      <span class="star-rating">
+      <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+      <span class="star-rating-back">★★★★★</span>
+      </span> 
+      </h2>
       <p><%= t.hp %></p>
+      <p><%= t.address %></p>
       <p><%= t.telephone %></p>
-      <p><%= t.created_at %></p>
-      <p><%= t.updated_at %></p>
       <div>
-      
-<h2>総合評価：
-<span class="star-rating">
-   <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
-   <span class="star-rating-back">★★★★★</span>
-</span> 
-</h2>
-</div>
+    </div>
     </div>
     <%= link_to "詳細へ", snow_path(t.id) %>
     <%= link_to "編集する", edit_snow_path(t.id) %>
@@ -95,3 +102,4 @@
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeGD507tfHw3zLYsclweUqIY9awizjsvc&callback=initMap" async defer></script>
+

@@ -13,3 +13,184 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    position: relative; 
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: #D3D8FF;
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header a {
+    color: black; 
+    text-decoration: none; 
+  }
+  header h1 {
+    color: black;
+    margin-left: 20px;
+  }
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+
+
+
+
+
+/*ハンバーガーボタン*/
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: white;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+
+
+/*ハンバーガーボタンからバツボタンへ*/
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/*チェックボックス消すためのコード*/
+#menu-btn-check {
+    display: none;
+}
+
+
+
+
+
+
+/*メニューの中身*/
+.menu-content {
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    top: 60;
+    right: 60;
+    z-index: 80;
+    background-color: white;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+    display:flex;
+  flex-flow: column;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 60%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+/*ボタンを押したらメニューが出てくるようにかえるコード*/
+.menu-content {
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    top: 0;
+    right: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: black;
+    
+}
+
+/*このコードでメニューが画面に出てくるようになる*/
+#menu-btn-check:checked ~ .menu-content {
+    right: 0;/*メニューを画面内へ*/
+}
+
+
+
+
+
+
+
+
+  footer {
+    color: black;
+    background-color: #D3D8FF;
+    bottom: 0;
+    width: 1440px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    
+    justify-content: flex-end;
+  }
+
