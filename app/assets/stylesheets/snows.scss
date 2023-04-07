@@ -108,6 +108,31 @@
 
   }
 
+  /*　以下詳細ページの星用のCSS　*/
+
+  .snow-show-star {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 1em;
+    font-size: 25px;
+    margin: 10px 70px;
+  }
+  .star-rating-front {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #ffcc33;
+  }
+  .star-rating-back {
+    display: inline-block;
+    color: #ccc;
+
+
+  }
+
 /*　以下新規投稿ページのCSS　*/
   .new-img{
     width: 100px;
@@ -545,3 +570,121 @@
     transform: translate(5px, 5px);
     color: #3F3E40;
   }
+
+    /*　以下詳細ページのCSS　*/
+
+.snow-show{
+  width: 40%;
+  margin: 0 auto;
+  background-color: #D9D9D9;
+  padding: 10px;
+  box-shadow: 5px 5px 4px #6f7070;
+}
+
+.snow-show-image{
+  text-align: center;
+  margin: 10px;
+  width: auto;
+  height: auto;
+}
+
+.snow-edit-textbox{
+  background-color: #ffffff;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.snow-show-spot{
+  text-align: center;
+}
+
+.snow-show h4{
+  text-align: center;
+}
+
+.snow-show-hp{
+  text-align: center;
+}
+
+.snow-show-telephone{
+  text-align: center;
+}
+
+.snow-show-address{
+  text-align: center;
+}
+
+.snow-show-day{
+  text-align: center;
+}
+
+.snow-show-editlink a{
+  text-decoration: none;
+  color: #3F3E40;
+}
+
+.snow-show-editlink{
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  position: relative;
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #3F3E40;
+  border: 2px solid #ffffff;
+  box-shadow: 5px 5px #6f7070;
+  transition: 0.3s ease-in-out;
+  font-family: 'Silkscreen', cursive;
+}
+
+.snow-show-editlink:hover{
+  box-shadow: none;
+  transform: translate(5px, 5px);
+  color: #3F3E40;
+}
+
+.snow-show-background{
+  background-image: url(new.jpg);
+  height: 600px;
+  padding: 80px;
+}
+
+.snow-show-indexlink{
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  position: relative;
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  color: #3F3E40;
+  border: 2px solid #D9D9D9;
+  box-shadow: 5px 5px #6f7070;
+  transition: 0.3s ease-in-out;
+  font-family: 'Silkscreen', cursive;
+}
+
+.snow-show-indexlink a{
+  text-decoration: none;
+  color: #3F3E40;
+}
+
+.snow-show-indexlink:hover{
+  box-shadow: none;
+  transform: translate(5px, 5px);
+  color: #3F3E40;
+}

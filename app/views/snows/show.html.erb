@@ -1,16 +1,38 @@
-<h1>Snow</h1>
-<h3>詳細</h3>
+<div class="snow-show-background">
+  <div class="snow-show">
+    <p class="snow-show-image">
+      <%= image_tag @Snow.image_url, size: "250x200" if @Snow.image? %>
+    </p>
 
+    <div class="snow-edit-textbox">
+      <p class="snow-show-spot">
+        <%= @Snow.spot %>
+      </p>
+      
+      <span class="snow-show-star">
+        <span class="star-rating-front" style="width: <%= getPercent(@Snow.overall) %>%;">★★★★★</span>
+        <span class="star-rating-back">★★★★★</span>
+      </span> 
 
+      <p class="snow-show-hp">
+        <%= @Snow.hp %>
+      </p>
 
-<div class="snow">
-  <p><%= @Snow.spot %></p>
-  <p><%= @Snow.address %></p>
-  <p><%= image_tag @Snow.image_url, size: "250x200" if @Snow.image? %></p>
-  <p><%= @Snow.hp %></p>
-  <p><%= @Snow.telephone %></p>
-  <p><%= @Snow.created_at %></p>
+      <p class="snow-show-telephone">
+        <%= @Snow.telephone %>
+      </p>
+
+      <p class="snow-show-address">
+        <%= @Snow.address %>
+      </p>
+    </div>
+
+    <div class="snow-show-editlink">
+      <%= link_to "TO EDIT", edit_snow_path(@Snow.id) %>
+    </div>
+  </div>
+
+  <div class="snow-show-indexlink">
+    <%= link_to "HOME", snows_path %>
+  </div>
 </div>
-
-<%= link_to "一覧に戻る", snows_path %>
-<%= link_to "編集する", edit_snow_path(@Snow.id) %>
