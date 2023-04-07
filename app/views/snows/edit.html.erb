@@ -1,6 +1,6 @@
-<div class="snow-new">
-  <div class="snow-new-backimage">
-    <div class="snow-new-flame">
+<div class="snow-edit">
+  <div class="snow-edit-backimage">
+    <div class="snow-edit-flame">
         <%= form_for @Snow do |f| %>
             <div class="snow-edit-image-flex">
                 <div class="snow-edit-image">
@@ -11,7 +11,7 @@
             </div>
 
             <div class="snow-edit-spot">
-                <%= f.label :スキー場 %>
+                <label class="snow-edit-text-spot">スキー場</label>
                 <%= f.text_field :spot, :size => 30 %>
             </div>
 
@@ -55,9 +55,13 @@
                 </div>
             </div>
     </div>
+    <div class="snow-edit-submit">
+        <%= f.submit "EDIT" %>
+    </div>
   </div>
-            <div class="snow-edit-submit">
-                <%= f.submit "EDIT" %>
-            </div>
+            
         <% end %>
+ <div class="snow-edit-link">
+    <%= link_to "HOME", snows_path %>
+ </div>
 </div>
