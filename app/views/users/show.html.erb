@@ -1,37 +1,43 @@
-<h1>マイページ</h1>
+<h1 class="users-show-title">MY PAGE</h1>
 
-<div class="user-in">
-<h2><%= @user.email %></h2>
-
-<% if @user.id == current_user.id %>
-    <%= @msg %>
-<% else %>
-    <% if @isRoom == true %>
-        <p><%= link_to 'DMへ', room_path(@roomId) %></p>
-    <% else %>
-        <%= form_for @room do |f| %>
-            <%= fields_for @entry do |e|%>
-                <% e.hidden_field :user_id, value: @user.id %>
+<div class="users-show">
+    <div class="users-show-flex">
+        <div class="users-show-image">
+            <%= image_tag @user.image_url, size: "250x200" if @user.image? %>
+        </div>
+        <div class="users-show-text">
+            <h2><%= @user.name %></h2>
+            <p><%= @user.email %></p>
+            <p><%= @user.profile %></p>
+        </div> 
+    </div>
+    <duv class="users-show-editlink">
+        <% if @user.id == current_user.id %>
+            <%= link_to "編集する", edit_user_registration_path %>
+        <% else %>
+            <% if @isRoom == true %>
+                <p><%= link_to 'DMへ', room_path(@roomId) %></p>
+            <% else %>
+                <%= form_for @room do |f| %>
+                    <%= fields_for @entry do |e|%>
+                        <% e.hidden_field :user_id, value: @user.id %>
+                    <% end %>
+                <%= f.submit "DMを開始する"%>
+                <% end %>
             <% end %>
-        <%= f.submit "DMを開始する"%>
         <% end %>
-    <% end %>
-<% end %>
+    </div>
+</div>
+
+<div class="user-show-link">
+    <div class="users-show-dmlink">
+        <%= link_to "ユーザーとDM", users_path %>
+    </div>
+
+    <div class="users-show-homelink">
+        <%= link_to "HOME", snows_path %>
+    </div>
 </div>
 
 
-<%= link_to "ユーザー一覧へ", users_path %>
-<%= link_to "一覧に戻る", snows_path %>
 
-
-
-<style>
-.user-in{
-    width:300px;
-    padding:10px;
-    margin:10px;
-    text-align:center;
-    border:1px solid darkgray;
-    background-color:gainsboro;
-}
-</style>

@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :snows
+         has_many :snows, dependent: :destroy
+         validates :name, presence: true 
+         validates :profile, length: { maximum: 200 } 
          has_many :messages, dependent: :destroy
-        has_many :entries, dependent: :destroy
+         has_many :entries, dependent: :destroy
+         mount_uploader :image, ImageUploader
 end

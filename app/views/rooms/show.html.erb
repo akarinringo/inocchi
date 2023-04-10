@@ -1,30 +1,48 @@
-<h1>DMサンプル</h1>
 
-<div class="user-in">
-<% @entries.each do |e| %>
-    <h3><strong><a href="/users/<%= e.user.id %>"><%= e.user.email%></a></strong></h3>
-<% end %>
-<p>2人のDM❤️</p>
-</div>
+
+
 
 <div class="dmMain">
+    <div class="rooms-show-name">
+        <% @entries.each do |e| %>
+            <h3><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%></a></strong></h3>
+        <% end %>
+    </div>
     <% @messages.each do |m| %>
-        <strong><%= m.body %></strong>
-        <small><%= m.user.email %>さん</small><hr>
+        <small><%= m.user.name %>さん</small><hr>
+        <h4><%= m.body %></h4>
     <% end %>
 
-    <%= form_for @message do |f| %>
-    <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , :size => 100 %>
-    <%= f.hidden_field :room_id, :value => @room.id %>
-    <br>
-    <%= f.submit "送信する" %>
-    <% end %>
+    
+        <%= form_for @message do |f| %>
+            <div class="room-show-dmbox">
+                <div class="room-show-text">
+                    <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , :size => 100 %>
+                    <%= f.hidden_field :room_id, :value => @room.id %>
+                </div>
+            </div>
+            <div class="room-show-buttoncenter">
+                <div class="room-show-button">
+                    <%= f.submit "送信する" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
 </div>
 
-<%= link_to "ユーザー一覧に戻る", users_path %>
-<%= link_to "一覧に戻る", snows_path %>
+<div class="room-show-link">
+    <div class="room-show-alluserlink">
+        <%= link_to "ALL USERS", users_path %>
+    </div>
+    <div class="room-show-homelink">
+        <%= link_to "HOME", snows_path %>
+    </div>
+</div>
 
 <style>
+.rooms-show-name{
+    text-align: center ;
+}
 .user-in{
     text-align:center;
     border:1px solid darkgray;
@@ -34,5 +52,8 @@
     padding:30px;
     border:1px solid darkgray;
     background-color:gainsboro;
+    width: 80% ;
+    margin: 0 auto ;
+    margin-top: 70px;
 }
 </style>
