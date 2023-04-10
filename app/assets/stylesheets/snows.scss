@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-
+/*ここからindexページのCSS*/
 /*スライドショー*/
 .img-frame{
   position: relative;
@@ -62,6 +62,29 @@
   100% {opacity: 0; transform: scale(1.1);}
   }
 
+
+/*投稿一覧*/
+.snows-container{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+width: 100%;
+text-align: center;
+}
+
+.snow-block{
+  justify-content: space-aruond;
+  width: 33%;
+  
+
+
+}
+
+
+.snow-index-textbox{
+  background-color: #ffffff;
+}
 
 
 

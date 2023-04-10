@@ -4,44 +4,46 @@
 <div class="img-03"></div>
 </div>
 
-    
-    
-    <h1>Snow</h1>
-<h3>一覧ページ</h3>
-<%= link_to "新規投稿へ", new_snow_path %>
-<% if user_signed_in? %>
-  <%= link_to "マイページへ", user_path(current_user.id) %>
-<% end %>
-
-<%= link_to "新潟", snows_niigata_path %>
-<%= link_to "長野", snows_nagano_path %>
-<%= link_to "群馬", snows_gunnma_path %>
-
 
 <div class="snows-container">
   <% @snows.each do |t| %>
-
+    <div class="snow-block">
     <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>
-
-    <div class="snow">
-      <p><%= t.spot %></p>
-      <h2>総合評価：
+    </br>
+    <div class="snow-index-textbox">
+      <%= t.spot %>
+      </br>
       <span class="star-rating">
       <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
       <span class="star-rating-back">★★★★★</span>
       </span> 
-      </h2>
-      <p><%= t.hp %></p>
-      <p><%= t.address %></p>
-      <p><%= t.telephone %></p>
+      </br>
+      <%= t.hp %>
+      </br>
+      <%= t.telephone %>
+      </br>
+      <%= t.address %>
       <div>
     </div>
     </div>
-    <%= link_to "詳細へ", snow_path(t.id) %>
-    <%= link_to "編集する", edit_snow_path(t.id) %>
-    <%= button_to "削除する", snow_path(t.id), method: :delete %>
+
+  <div class="snow-index-showlink">
+    <%= link_to "SHOW", snow_path(t.id) %>
+  </div>
+
+  <div class="snow-index-editlink">
+    <%= link_to "EDIT", edit_snow_path(t.id) %>
+    </div>
+
+    <div class="snow-index-delete">
+    <%= button_to "DELETE", snow_path(t.id), method: :delete %>
+    
+    </div>
+    </div>
   <% end %>
   </div>
+  </div>
+
   <div id='map'></div>
 
 <style>

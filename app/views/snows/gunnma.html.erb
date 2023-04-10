@@ -1,8 +1,31 @@
 <h1>群馬のスキー場やで</h1>
+<div class="snows-container">
 <% @gunnmas.each do |t| %>
     <% if t.category == "gunnma" %> 
-    <p>内容:<%= t.spot %></p>
+    <div class="snow-block">
+    <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>
+    </br>
+    <div class="snow-index-textbox">
+      <%= t.spot %>
+      </br>
+      <span class="star-rating">
+      <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+      <span class="star-rating-back">★★★★★</span>
+      </span> 
+      </br>
+      <%= t.hp %>
+      </br>
+      <%= t.telephone %>
+      </br>
+      <%= t.address %>
+     
+      <div>
+    </div>
+    </div>
+    </div>
     <% end %>
-  <% end %>
+    <% end %>
+    </div>
+    </div>
 
   <%= link_to "一覧に戻る", snows_path %>
